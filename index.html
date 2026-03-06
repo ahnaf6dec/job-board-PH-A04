@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Job Tracker Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="bg-base-200 p-6">
+
+<!-- Navbar -->
+
+<div class="navbar bg-base-100 shadow rounded-box mb-6">
+
+<div class="flex-1">
+<h1 class="text-xl font-bold">Job Tracker Dashboard</h1>
+</div>
+
+<div class="flex gap-4">
+
+<div class="stat bg-base-200 px-4 py-2 rounded">
+<div class="stat-title text-xs">Interview</div>
+<div id="interviewCount" class="stat-value text-primary">0</div>
+</div>
+
+<div class="stat bg-base-200 px-4 py-2 rounded">
+<div class="stat-title text-xs">Rejected</div>
+<div id="rejectedCount" class="stat-value text-error">0</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Jobs Section -->
+
+<div class="bg-base-100 p-6 rounded-box shadow">
+
+<div class="flex justify-between items-center mb-4">
+
+<h2 class="text-lg font-semibold">Available Jobs</h2>
+
+<span id="jobCount" class="badge badge-primary">8 Jobs</span>
+
+</div>
+
+
+<!-- Tabs -->
+
+<div class="tabs tabs-boxed mb-6">
+
+<button class="tab tab-active" onclick="showTab('all',this)">All</button>
+<button class="tab" onclick="showTab('interview',this)">Interview</button>
+<button class="tab" onclick="showTab('rejected',this)">Rejected</button>
+
+</div>
+
+
+<!-- Jobs Grid -->
+
+<div id="jobsContainer"
+class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+</div>
+
+
+<!-- Empty State -->
+
+<div id="emptyState" class="hidden text-center py-10">
+
+<img src="https://cdn-icons-png.flaticon.com/512/7486/7486740.png"
+class="w-24 mx-auto mb-3">
+
+<h3 class="font-semibold">No Jobs Available</h3>
+<p class="text-sm text-gray-500">
+You haven't added any jobs to this section yet
+</p>
+
+</div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
